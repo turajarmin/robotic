@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+/* 
+  nth-child first-chid last-child 
+  nth-of-type nth-first-of-type nth-last-of-type nth- ....
+  empty not 
+  focus placeholder target valid invalid required read-only .......
+  +
+  ~  
+*/
+label[for=show]{
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  background-color: blueviolet;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  color: whitesmoke;
+  margin: 10px;
+  box-shadow: 5px 5px 5px black;
+  cursor:pointer;
+  transition: 100ms;
+}
+label:active{
+  width:140px ;
+  height: 35px;
+  line-height: 35px;
+}
+#show,#close{
+  display: none;
+}
+div.show{
+  width: 500px;
+  height: 300px;
+  margin: 50px auto;
+  background-color: purple;
+  position:absolute;
+  left: -100%;
+  transition: 300ms;
+}
+label[for=close]{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: crimson;
+  position: absolute;
+  left: -25px;
+  top: -25px;
+  border-radius: 50%;
+  border: 2px inset lightgrey;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+#show:checked ~ div.show{
+  left: calc(50% - 500px / 2);
+}
+#close:checked ~ div.show{
+  left: -100%;
+}
